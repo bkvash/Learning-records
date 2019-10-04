@@ -1,0 +1,22 @@
+可变性variance 分三种 协变convariance 逆变contravariance 不变invariance
+感觉稍微要难一点了 跟基类派生类实例有关
+看书有些复杂 
+string》object 协变 （和谐）（用out   <out T>）
+object》 string 逆变 （不正常）（<in T>）
+???不变是啥
+接口也能协变逆变 一样用 out in
+不变就是光溜溜的 <T> 脑子瓦特啦非写个不变
+感觉书都没细看懂 就大概懂个概念 后面的章节估计都是含糊看懂过去 之后再熟悉 也不是不可以
+
+枚举器 和 迭代器
+啥玩意啊
+跟foreach有关 有道理诶
+数组能用foreach是因为数组是可枚举类型 也就是还有不可枚举类型 emm
+IEnumerator 接口 三个函数成员 Current MoveNext Reset 好理解
+current只读 返回object 啥都ok
+movenext 返回bool 新位置有效就true 无效就false 在第一次执行current之前必须调用次movenext
+reset就是reset 重置
+枚举器初始位置是 -1
+IEnumerable 接口 就只有个GetEnumerator方法 没啥说的
+泛型枚举器 也没啥特别的
+

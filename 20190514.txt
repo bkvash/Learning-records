@@ -1,0 +1,14 @@
+还是看看u3d书上关于资源加载的部分
+GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Cube.prefab");
+
+//方式1
+GameObject go = GameObject.Instantiate<GameObject>(prefab);
+//GameObject.Instantiate只创建新对象 会丢失Prefab的引用
+
+//方式2
+GameObject go = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+//PrefabUtility.InstantiatePrefab方法会保持原有的引用关系
+
+看了半天这是编辑模式的操作 运行模式就不能这么写 打了包就不会带上editor文件夹里的东西
+所以这些操作都是写给工具用的
+面试的时候考的资源加载和卸载 肯定不是关注编辑模式的

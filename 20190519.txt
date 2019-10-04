@@ -1,0 +1,55 @@
+明早有个面试
+在这里要检讨一下
+本来是15号下午接到的电话 打算周五面 但人家没时间
+就推到了周一
+不算15号都有整整4天 然而打p5就花了3天
+最后一天也就是今天还在疯狂拖延
+这不就打算通宵准备准备 一早去面试
+该挨
+
+开搞
+
+运行模式下的资源加载卸载内容
+Resource.Load<T>("name");
+Resource目录下的资源都会打包 所以不必要加载的以及废弃的 就不要放进去
+
+另外Resource目录下的资源不要直接引用在场景中 否则会被场景和resource打成两份
+这句话不是很明白 啥叫直接引用
+
+删除对象
+GameObject.Destroy()
+GameObject.DestroyImmediate()
+第一个会等一帧再彻底删除 因为这一帧后面可能有其他地方在操作这个对象 一般建议使用
+第二个会立即删除 所以执行后如果有其他地方代码操作被删的对象就会立即报错
+
+/*
+//一秒后删除
+GameObject.Destroy(go, 1f)
+*/
+
+对象删了但资源还没删 资源仍在内存里
+Resources.UnloadAsset()
+Resources.UnloadUnusedAssets()
+删除资源是异步操作 可以使用 isDone (bool)来判断是否完成
+
+调用两遍GC() 和 Resources.UnloadAsset() 来保证C#完成GC工作
+
+AssetBundle
+加载
+AssetBundle ab = AssetBundle.LoadFromFile(path)
+//加载manifest 加载依赖的bundle
+
+读取
+ab.LoadAsset<T>(name);
+实例化
+GameObject.Instantiate<T>(go);
+
+加载场景就加载了场景Bundle后直接SceneManager.LoadScene(name);
+
+卸载AssetBundle
+加载过程 AssetBundle对象 > 资源对象 >游戏对象
+卸载就过程反过来
+GameObject.Destroy()
+Resources.UnloadUnusedAssets()
+AssetBundle.UnloadAllAssetBundles(true)
+

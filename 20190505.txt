@@ -1,0 +1,6 @@
+重新看一遍C#书 再完整看一遍U3d书
+
+C#关键字里发现了一堆完全不知道用法的关键字
+checked decimal explicit fixed goto implicit 
+lock operator params readonly stackalloc 
+unchecked unsafe volatile

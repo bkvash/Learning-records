@@ -1,0 +1,12 @@
+unity 文件夹作用
+
+Assets 游戏资源的顶层文件夹
+Editor 编辑模式下的代码放这里 打包之后会自动剥离
+Editor Default Resources 编辑模式下的资源尽量放这里
+Gizmos 放一些工具类图标
+Plugins 会优先编译成DLL文件
+Resources 此目录下所有资源都会自动构建在包体内
+Standard Assets 导入unity标准资源的package文件夹 这里的脚本会比较优先得执行
+StreamingAssets AssetBundle文件适合放在这里 因为这里的资源不会被自动压缩或者改变
+
+大小包 小包需要额外下载才完整 大包就是完整包 大小包可以用隐藏文件夹 具体暂略

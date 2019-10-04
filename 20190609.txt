@@ -1,0 +1,11 @@
+之前一个笔试题考这个 当时代码都没太看懂 大概知道考的是什么 但是真的不觉得该记这个
+C#数据类型占用字节数
+bool 网上要么没说占几个字节 要么有说一个的有说四个的
+byte 1字节
+sbyte 1字节
+char 2字节
+short 2字节
+ushort 2字节
+int/uint 4字节
+float 4字节
+ulong/long/double 8字节

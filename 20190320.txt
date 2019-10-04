@@ -1,0 +1,46 @@
+拆箱装箱
+讲一个结构实例作为引用类型对象 就必须创建装箱的副本
+装箱的过程就是制作值类型变量的引用类型副本
+值类型在内的所有C#类型都派生自object类型 而值类型是高效轻量的类型
+因为默认情况下在堆上不包括他们的对象组件 然而如果需要对象组件就可以用装箱
+装箱是一种隐式转换 接受值类型的值 并根据这个值在堆上创建一个完整的引用类型对象并返回对象引用
+
+int i = 12;
+object oi = null;
+oi = i;
+
+这就完成了装箱
+而且oi 和 i是互相独立的
+装箱时返回引用类型的副本
+
+int i = 10;
+object oi = i;
+Console.WriteLine("i:{0}, oi:{1}",i,oi);
+输出为(10 10)
+i = 12;
+oi = 15;
+Console.WriteLine("i:{0}, oi:{1}",i,oi);
+输出为（12 15）
+
+拆箱就是 int j = (int)oi;
+没啥说的
+尝试将一个值拆箱为非原始类型时会抛出异常 InvalidCastException
+
+string 和 stringbuilder
+1.字符串是Unicode字符数组
+2.字符串是不可变的（immutable）-它们不能被修改
+对string 任何“改变”都会分配一个新的恒定字符串
+string a = "aaa"; 
+a.ToUpper();
+Console.WriteLine(a);
+输出："aaa"
+
+stringbuilder类可以动态有效地生成字符串 避免创建许多副本
+1.StringBUilder类是BCL的成员 位与System.Text命名空间中
+BCL是啥....
+查了一下好像是Base Class Library 基类库
+还有FCL Framework Class Library类库
+FCL中的其他类基本上引用BCL在其基础上做的扩充
+2.StringBuilder对象是Unicode字符的可变数组
+方便使用string而已 没啥其他特别的
+

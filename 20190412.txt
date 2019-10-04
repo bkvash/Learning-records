@@ -1,0 +1,26 @@
+今天开始每天定量看书 4个小时 暂定
+目前先搞unity这块 ugui assetbundle drawcall优化这些
+面试问的多 我之前也没太在意 先看
+
+ugui 看的应该比较快 需要注意的地方再写一下记一下
+raycast target一般没必要不要勾选 ugui的事件系统会遍历所有带raycasttarget的组件
+会带来一些没必要的开销 而且还不是很小
+但ugui默认是都会勾选的 所以之前也做过 重写一下 默认不勾选
+
+描边和阴影 Outline Shadow
+描边的原理是在text组件上下左右各多画一边 所以效率比较低
+而阴影就会好些 只需多画一边 所以能用阴影就不要用描边
+
+image
+四种格式
+simple 直接显示
+sliced 九宫格 可用SpriteEditor编辑
+tiled 平铺
+filled 像技能cd一样 可旋转图片
+
+Raw Image
+Image组件只能显示Sprite
+而Raw Image既可以显示任意Texture
+(我一直分不清纹理和材质 材质球什么的一直不懂)
+也可以显示Sprite 只不过还是以Texture方式显示的
+每一个Raw Image就占一次DrawCall 所以不太建议使用
