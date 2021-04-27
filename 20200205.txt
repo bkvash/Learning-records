@@ -1,0 +1,36 @@
+lua函数可以返回两个值.....
+
+for循环
+数值for循环
+for 起始值 , 终止值 , step值 do
+	--loop-Part
+end
+step值可省略 默认为1
+
+例
+for i = 10 , 1 , -1 do 
+	print(i)
+end
+
+起始值 终止值 step值 都只会被计算一次 且在循环开始前
+
+退出用break
+且循环过程中不要改变控制变量的值 因结果不可预知
+
+范型for循环
+for i , v in ipairs(a) do 
+
+	print(v) 
+
+end
+看着挺像foreach
+
+lua语法要求break return只能出现在block的结尾一句
+所以像C#里return后面的代码无效这种情况就不合法
+
+有需要可以显式使用do end来实现
+do return end
+
+函数
+这章节应该非常重要
+

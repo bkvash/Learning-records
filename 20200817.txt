@@ -1,0 +1,12 @@
+每日一小时 走着
+上次看了camera 今天看light&shadow
+
+directional Light 方向光
+没有光源位置 相当于太阳光
+
+point light 点光源 例子灯泡
+
+spot light 相当于部分点光源 探照灯这种 点光源是全向的 spot light就是圆锥形
+
+area light 面光 相当于一个面向一个方向发光 现实世界没有这种光 计算量大没法实时渲染 只能烘培
+
